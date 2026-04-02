@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trote Solidário</title>
     <link rel="stylesheet" href="styles.css">
-</head>
+   <script src="scripts.js"></script>
 <body>
     <nav class="menu">
         <div class="menu-container">
@@ -25,9 +25,9 @@
 
     <main class="principal">
         <section class ="calculadora">
-            <h3>Simulador de Pontos</h3>
-            <div>
-          <div class="form-grid">
+            <h3>Simulador de Itens Avulsos</h3>
+            <div class="form-grid">
+          <div class="form-group">
             <label> Arroz (5 kg)- 10 pontos</label>
             <input type="number" id="arroz" min="0">
           </div>
@@ -38,11 +38,42 @@
           </div>
 
           <div class="form-group">
-            <label> Macarrão (500g)- 5 pontos</label>
+            <label> Macarrão (500g)- 2 pontos</label>
             <input type="number" id="macarrao" min="0">
           </div>
+
+            <div class="form-group">
+                <label> Óleo (900ml)- 4 pontos</label>
+                <input type="number" id="oleo" min="0">
         </div>
-          <button type="button" onclick="calcular()">Calcular Pontos</button>
+         
+        </section>
+
+          <section>
+            <h3>Simulador de Metas Batidas</h3>
+            <div class="form-grid">
+          <div class="form-group">
+            <label>Kit-Alimentação (60 Kits)</label>
+            <input type="number" id="kit_alimentacao" min="0">
+          </div>
+
+          <div class="form-group">
+            <label> Suplementos (30 Latas)</label>
+            <input type="number" id="suplementos" min="0">
+          </div>
+
+          <div class="form-group">
+            <label> Leite (60 caixas)</label>
+            <input type="number" id="leite" min="0">
+          </div>
+
+            <div class="form-group">
+                <label> Doação de Sangue</label>
+                <input type="number" id="doacao_sangue" min="0">
+        </div>
+        </section>
+        <section>
+             <button type="button" onclick="calcular()">Calcular Pontos</button>
           <div class="resultado" id="resultado"> pontuação total: 0 pontos</div>
         </section>
     </main>
@@ -51,17 +82,5 @@
         <p>Coordenação Trote Solidário 2026: trotesolidário@facef.br</p>
         <p>Uni-FACEF - Centro Universitário Municipal de Franca</p>
     </footer>
-
-    <script>
-    function calcular() {
-        let arroz = Number(document.getElementById('arroz').value);
-        let feijao = Number(document.getElementById('feijao').value);
-        let macarrao = Number(document.getElementById('macarrao').value);
-
-        let pontos = (arroz * 10) + (feijao * 8) + (macarrao * 5);
-        document.getElementById('resultado').textContent = `pontuação total: ${pontos} pontos`;
-
-    }
-    </script>
 </body>
 </html>
